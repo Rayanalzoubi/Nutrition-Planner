@@ -20,4 +20,4 @@ Nutrition Planner is a comprehensive nutrition application designed to help user
 ### Setup:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Rayanalzoubi/Nutrition-Planner.git
+   git clone https://github.com/Rayanalzoubi/Nutrition-Planner/tree/main
