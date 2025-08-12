@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/age_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+
+    <!-- 1) Back arrow -->
+    <ImageView
+        android:id="@+id/ivBackAge"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_back"
+        android:contentDescription="@string/back"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- 2) Logo -->
+    <ImageView
+        android:id="@+id/imgLogoAge"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logonew"
+        android:contentDescription="@string/app_name"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@id/ivBackAge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 3) Title -->
+    <TextView
+        android:id="@+id/tvTitleAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How old are you?"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoAge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 4) Illustration -->
+    <ImageView
+        android:id="@+id/imgIllustrationAge"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/agepic"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="16dp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleAge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 5) “why we ask” -->
+    <TextView
+        android:id="@+id/tvWhyAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/why_we_ask"
+        android:textSize="16sp"
+        android:textColor="#2ECC71"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/imgIllustrationAge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 6) Age entry group -->
+    <LinearLayout
+        android:id="@+id/llAgeEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvWhyAge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/editTextAgeOnly"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="24sp"
+            android:background="@android:color/transparent"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tvYearSuffix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:textSize="24sp"
+            android:textColor="#000"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- underline -->
+    <View
+        android:id="@+id/underlineAge"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#000"
+        app:layout_constraintTop_toBottomOf="@id/llAgeEntry"
+        app:layout_constraintStart_toStartOf="@id/llAgeEntry"
+        app:layout_constraintEnd_toEndOf="@id/llAgeEntry"/>
+
+    <!-- 7) Next button -->
+    <Button
+        android:id="@+id/btnNextAge"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_pill_green"
+        android:textColor="#000"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/underlineAge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

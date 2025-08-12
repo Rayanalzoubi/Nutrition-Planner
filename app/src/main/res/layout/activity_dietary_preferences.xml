@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/diet_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+
+    <!-- 1) Back arrow -->
+    <ImageView
+        android:id="@+id/ivBackDiet"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_back"
+        android:contentDescription="@string/back"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- 2) NP Logo -->
+    <ImageView
+        android:id="@+id/imgLogoDiet"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logonew"
+        android:contentDescription="@string/app_name"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@id/ivBackDiet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 3) Title -->
+    <TextView
+        android:id="@+id/tvTitleDiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Dietary Preferences"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoDiet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 4) Illustration -->
+    <ImageView
+        android:id="@+id/imgIllustrationDiet"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/ditepic"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="16dp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleDiet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 5) “why we ask” -->
+    <TextView
+        android:id="@+id/tvWhyDiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/why_we_ask"
+        android:textSize="16sp"
+        android:textColor="#2ECC71"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/imgIllustrationDiet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 6) RadioGroup for preferences -->
+    <RadioGroup
+        android:id="@+id/radioGroupDietPref"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvWhyDiet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            style="@style/ChoiceRadio"
+            android:id="@+id/radioVegetarian"
+            android:text="@string/vegetarian"/>
+
+        <RadioButton
+            style="@style/ChoiceRadio"
+            android:id="@+id/radioOmnivore"
+            android:text="@string/omnivore"/>
+
+        <RadioButton
+            style="@style/ChoiceRadio"
+            android:id="@+id/radioPescatarian"
+            android:text="@string/pescatarian"/>
+    </RadioGroup>
+
+    <!-- 7) “Get your plan” button -->
+    <Button
+        android:id="@+id/btnGetPlan"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:text="Get your plan"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_pill_green"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupDietPref"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

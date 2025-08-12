@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1) Full-screen fruit image in the back -->
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backgroundpic" />
+
+    <!-- 2) Logo at the very top, centered -->
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/logonew" />
+
+    <!-- 3) “Welcome to” just below the logo -->
+    <TextView
+        android:id="@+id/tv_welcome_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_logo"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="Welcome to"
+        android:textSize="18sp"
+        android:textColor="#333333" />
+
+    <!-- 4) “NutritionPlanner” below that -->
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_welcome_to"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:text="NutritionPlanner"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#800000"
+        android:shadowColor="#55000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4" />
+
+    <!-- 5) “I am new” button below the app name -->
+    <Button
+        android:id="@+id/btn_i_am_new"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/tv_app_name"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:text="I am new"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_pill_green"
+        android:textColor="#FFFFFF" />
+
+    <!-- 6) Helper text below the “I am new” button -->
+    <TextView
+        android:id="@+id/tv_already"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_i_am_new"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="Already used Nutrition planner?"
+        android:textSize="14sp"
+        android:textColor="#555555" />
+
+    <!-- 7) “Sign in” button below that helper text -->
+    <Button
+        android:id="@+id/btn_sign_in"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/tv_already"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:text="Sign in"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_pill_outline"
+        android:textColor="#000000" />
+
+</RelativeLayout>

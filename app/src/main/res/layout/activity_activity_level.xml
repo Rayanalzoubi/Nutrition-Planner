@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_level_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+
+    <!-- 1) Back arrow -->
+    <ImageView
+        android:id="@+id/ivBackLevel"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_back"
+        android:contentDescription="@string/back"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- 2) Logo -->
+    <ImageView
+        android:id="@+id/imgLogoLevel"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logonew"
+        android:contentDescription="@string/app_name"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/ivBackLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 3) Title -->
+    <TextView
+        android:id="@+id/tvTitleLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_activity_level"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 4) Illustration -->
+    <ImageView
+        android:id="@+id/imgIllustrationLevel"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/levelpic"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="16dp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 5) “why we ask” -->
+    <TextView
+        android:id="@+id/tvWhyLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/why_activity_level"
+        android:textSize="16sp"
+        android:textColor="#006400"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="12dp"
+    android:minHeight="48dp"
+    app:layout_constraintTop_toBottomOf="@id/imgIllustrationLevel"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 6) RadioGroup of 5 options -->
+    <RadioGroup
+        android:id="@+id/radioGroupLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvWhyLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioSedentary"
+            style="@style/LevelRadio"
+            android:text="@string/sedentary"/>
+
+        <RadioButton
+            android:id="@+id/radioLightlyActive"
+            style="@style/LevelRadio"
+            android:text="@string/lightly_active"/>
+
+        <RadioButton
+            android:id="@+id/radioVeryActive"
+            style="@style/LevelRadio"
+            android:text="@string/very_active"/>
+
+        <RadioButton
+            android:id="@+id/radioModeratelyActive"
+            style="@style/LevelRadio"
+            android:text="@string/moderately_active"/>
+
+        <RadioButton
+            android:id="@+id/radioExtremelyActive"
+            style="@style/LevelRadio"
+            android:text="@string/extremely_active"/>
+    </RadioGroup>
+
+    <!-- 7) Next button -->
+    <Button
+        android:id="@+id/btnNextLevel"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_pill_green"
+        android:textColor="#000000"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

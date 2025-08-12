@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tall_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:background="@android:color/white">
+
+    <!-- 1) Back arrow -->
+    <ImageView
+        android:id="@+id/ivBackTall"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_back"
+        android:contentDescription="@string/back"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- 2) Logo -->
+    <ImageView
+        android:id="@+id/imgLogoTall"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/logonew"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@id/ivBackTall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 3) Title -->
+    <TextView
+        android:id="@+id/tvTitleTall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/tall_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoTall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 4) Illustration -->
+    <ImageView
+        android:id="@+id/imgIllustrationTall"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tallpic"
+        tools:ignore="ContentDescription"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleTall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 5) “Why we ask” link -->
+    <TextView
+        android:id="@+id/tvWhyTall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+        android:minHeight="48dp"
+        android:text="@string/why_we_ask"
+        android:textSize="16sp"
+        android:textColor="#006400"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@id/imgIllustrationTall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 6) Height entry group -->
+    <LinearLayout
+        android:id="@+id/llTallEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvWhyTall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 6a) Height input -->
+        <EditText
+            android:id="@+id/editTextTallOnly"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:inputType="numberDecimal"
+
+            android:importantForAutofill="yes"
+            android:labelFor="@id/tvMeterSuffix"
+            android:textSize="24sp"
+            android:gravity="center"/>
+
+        <!-- 6b) Suffix -->
+        <TextView
+            android:id="@+id/tvMeterSuffix"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:text="@string/meter_suffix"
+            android:textSize="24sp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+    <!-- Underline matching width above -->
+    <View
+        android:id="@+id/underlineTall"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#000000"
+        app:layout_constraintTop_toBottomOf="@id/llTallEntry"
+        app:layout_constraintStart_toStartOf="@id/llTallEntry"
+        app:layout_constraintEnd_toEndOf="@id/llTallEntry"/>
+
+    <!-- 7) Next button -->
+    <Button
+        android:id="@+id/btnNextTall"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_pill_green"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/underlineTall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

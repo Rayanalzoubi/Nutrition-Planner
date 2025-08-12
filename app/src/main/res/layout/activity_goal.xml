@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/goal_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+
+    <!-- 1) Back arrow: notice the id here must match your Java -->
+    <ImageView
+        android:id="@+id/ivBackGoal"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_back"
+        android:contentDescription="@string/back"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- 2) Logo -->
+    <ImageView
+        android:id="@+id/imgLogoGoal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logonew"
+        android:contentDescription="@string/app_name"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@id/ivBackGoal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 3) Title -->
+    <TextView
+        android:id="@+id/tvTitleGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your Goal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoGoal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 4) Illustration -->
+    <ImageView
+        android:id="@+id/imgIllustrationGoal"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/goalpic"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="16dp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleGoal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 5) “why we ask” -->
+    <TextView
+        android:id="@+id/tvWhyGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/why_we_ask"
+        android:textSize="16sp"
+        android:textColor="#2ECC71"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/imgIllustrationGoal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 6) RadioGroup -->
+    <RadioGroup
+        android:id="@+id/radioGroupGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvWhyGoal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            style="@style/ChoiceRadio"
+            android:id="@+id/radioLoseWeight"
+            android:text="@string/lose_weight"/>
+
+        <RadioButton
+            style="@style/ChoiceRadio"
+            android:id="@+id/radioBuildMuscle"
+            android:text="@string/build_muscle"
+            android:layout_marginTop="8dp"/>
+
+        <RadioButton
+            style="@style/ChoiceRadio"
+            android:id="@+id/radioMaintain"
+            android:text="@string/maintain"
+            android:layout_marginTop="8dp"/>
+    </RadioGroup>
+
+    <!-- 7) Next button -->
+    <Button
+        android:id="@+id/btnNextGoal"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_pill_green"
+        android:textColor="#000"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupGoal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
